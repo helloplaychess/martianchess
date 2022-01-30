@@ -17,6 +17,4 @@ var gameState = {
   currentBoard: Object.create(defaultBoard)
 };
 
-
-
 console.log("2: base.js has been loaded");
