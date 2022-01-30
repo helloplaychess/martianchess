@@ -67,7 +67,6 @@ function mouseClicked() {
     //a cell was pressed
     if(sB == true){
       sB = false;
-      console.log("to " + selectedX + " " + selectedY);
       moveDestination[0] = selectedX;
       moveDestination[1] = selectedY;
     }else if(sB == false){
