@@ -10,8 +10,8 @@ let designs = 1; //more will be added later
 let sB = false;
 let sX;
 let sY;
-let moveLocation = [];
-let moveDestination = [];
+let moveLocation = [0, 0];
+let moveDestination = [0, 0];
 
 function preload() {
   for (let i = 1; i < designs+1; i++){
@@ -69,6 +69,19 @@ function mouseClicked() {
       sB = false;
       moveDestination[0] = selectedX;
       moveDestination[1] = selectedY;
+
+      var selectedMove;
+      let legalMoves = gameState.legalMoves();
+      for (let i = 0; i < legalMoves.length; i++){
+
+        if(legalMoves[i].location[0] == moveLocation[0] && legalMoves[i].location[1] == moveLocation[1] && legalMoves[i].destination[0] == moveDestination[0] && legalMoves[i].destination[1] == moveDestination[1]){
+
+          gameState.execute(legalMoves[i]);
+
+        }
+
+      }
+
     }else if(sB == false){
       sX = selectedX;
       sY = selectedY;
@@ -77,11 +90,6 @@ function mouseClicked() {
         moveLocation[0] = selectedX;
         moveLocation[1] = selectedY;
       }
-    }
-  }
-  for (let i = 0; i < 8; i++){
-    for (let j = 0; j < 4; j++){
-      //(j*150, i*150, j*150+150, i*150+150);
     }
   }
 }
