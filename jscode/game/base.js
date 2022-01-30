@@ -14,7 +14,11 @@ var defaultBoard = [
 ];
 
 var gameState = {
-  currentBoard: Object.create(defaultBoard)
+  currentBoard: Object.create(defaultBoard),
+  scoreTop: 0,
+  scoreBottom: 0
 };
+
+
 
 console.log("2: base.js has been loaded");
